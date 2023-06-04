@@ -1,11 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../action.dart';
 import '../components/components.dart';
 import '../tabs/comedy.dart';
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+   HomePage({super.key});
+final user = FirebaseAuth.instance.currentUser!;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -23,10 +24,10 @@ class HomePage extends StatelessWidget {
                         text: "Welcome",
                         style: TextStyle(
                             fontSize: 20, color: Colors.grey.shade500),
-                        children: const [
+                        children:  [
                       TextSpan(
-                          text: '  John',
-                          style: TextStyle(color: Colors.red, fontSize: 20)),
+                          text: user.email,
+                          style: const TextStyle(color: Colors.red, fontSize: 20)),
                     ])),
               ),
               const SizedBox(

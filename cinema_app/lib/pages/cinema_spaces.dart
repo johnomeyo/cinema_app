@@ -2,9 +2,7 @@ import 'package:cinema_app/components/components.dart';
 import 'package:cinema_app/components/essentials.dart';
 import 'package:cinema_app/data/movies.dart';
 import 'package:cinema_app/grids/third_grid.dart';
-import 'package:cinema_app/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import '../grids/first_grid.dart';
 import '../grids/second_grid.dart';
@@ -37,13 +35,13 @@ class Booking extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   MovieDayAndTime(upperText: "Fri", lowerText: "19"),
                   SizedBox(
                     width: 10,
@@ -68,13 +66,13 @@ class Booking extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   MovieDayAndTime(upperText: "Ksh.700. 3D", lowerText: "13.00"),
                   SizedBox(
                     width: 10,
@@ -125,7 +123,9 @@ class Booking extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           const MyButton(buttonName: "Continue")
         ],
       ),

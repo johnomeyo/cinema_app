@@ -11,15 +11,15 @@ class SecondGrid extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Row(
         children: [
-          SizedBox(
+          const SizedBox(
             width: 50,
             child: SizedBox(
               height: 125,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5),
+                padding: EdgeInsets.symmetric(vertical: 5),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     Text("C"),
                     Text("D"),
                     Text("E"),
