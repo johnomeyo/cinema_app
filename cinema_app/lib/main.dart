@@ -1,8 +1,10 @@
-import 'package:cinema_app/get_started/sign_up_page.dart';
+import 'package:cinema_app/get_started/login_page.dart';
 import 'package:cinema_app/navigation_pages/favorites.dart';
 import 'package:cinema_app/navigation_pages/homepage.dart';
 import 'package:cinema_app/navigation_pages/profile.dart';
 import 'package:cinema_app/navigation_pages/tickets.dart';
+import 'package:cinema_app/pages/auth_page.dart';
+import 'package:cinema_app/pages/login.dart';
 import 'package:cinema_app/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:device_preview/device_preview.dart';
@@ -51,7 +53,7 @@ class MyApp extends StatelessWidget {
         locale: DevicePreview.locale(context),
         builder: DevicePreview.appBuilder,
         darkTheme: ThemeData.dark(),
-        home:  SignUp(),
+        home: const AuthPage(),
       ),
     );
   }

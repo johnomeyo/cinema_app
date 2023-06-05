@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class BookSeat extends ChangeNotifier {
-  bool isBooked = true;
-  // get _isBooked => isBooked;
+  List<bool> generateBooleanList(int length) {
+    return List<bool>.filled(length, false);
+  }
+
+  bool isSelected = true;
   bool bookSeat() {
-    isBooked = !isBooked;
+    isSelected = !isSelected;
     notifyListeners();
-    return isBooked;
+    return isSelected;
   }
 }
 

@@ -21,6 +21,7 @@ class MovieDisplay extends StatelessWidget {
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
+          // backgroundColor: movie.image.color,
           leading: IconButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -35,7 +36,7 @@ class MovieDisplay extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(20.0),
               child: Container(
                 height: 250,
                 width: double.infinity,
@@ -48,7 +49,7 @@ class MovieDisplay extends StatelessWidget {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
                   Text(
@@ -97,7 +98,7 @@ class MovieDisplay extends StatelessWidget {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Divider(
                 color: Colors.grey.shade200,
               ),
@@ -117,7 +118,7 @@ class MovieDisplay extends StatelessWidget {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Divider(
                 color: Colors.grey.shade300,
               ),
@@ -126,7 +127,7 @@ class MovieDisplay extends StatelessWidget {
               height: 10,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 "Synopsis",
                 style: TextStyle(color: Colors.grey.shade700, fontSize: 20),
@@ -145,10 +146,8 @@ class MovieDisplay extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-          ],
-        ),
-      ),
-      bottomNavigationBar: GestureDetector(
+            // const MyButton(buttonName: 'Buy Ticket',),
+             GestureDetector(
           onTap: () {
             Navigator.push(
                 context,
@@ -156,6 +155,18 @@ class MovieDisplay extends StatelessWidget {
                     builder: ((context) => Booking(movie: movie))));
           },
           child: const MyButton(buttonName: "Buy Ticket")),
+          ],
+        ),
+      ),
+     
+      // bottomNavigationBar: GestureDetector(
+      //     onTap: () {
+      //       Navigator.push(
+      //           context,
+      //           MaterialPageRoute(
+      //               builder: ((context) => Booking(movie: movie))));
+      //     },
+      //     child: const MyButton(buttonName: "Buy Ticket")),
     );
   }
 }

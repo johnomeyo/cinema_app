@@ -43,19 +43,19 @@ class SecondGrid extends StatelessWidget {
                 ),
                 itemBuilder: (BuildContext context, int index) {
                   return ChangeNotifierProvider(
-                    create: (_) => BookSeat(), // Create a new instance of BookSeat for each container
+                    create: (context) => BookSeat(),
                     child: Consumer<BookSeat>(
                       builder: (BuildContext context, bookSeat, Widget? child) {
                         return GestureDetector(
                           onTap: () {
                             bookSeat.bookSeat();
-
+                  
                           },
                           child: Container(
                             height: 10,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(5),
-                              color: bookSeat.isBooked ? Colors.pink.shade100 : Colors.red.shade600,
+                              color: bookSeat.isSelected ? Colors.pink.shade100 : Colors.red.shade600,
                             ),
                           ),
                         );
