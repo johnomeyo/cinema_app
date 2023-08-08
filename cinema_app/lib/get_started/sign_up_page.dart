@@ -14,15 +14,18 @@ class SignUp extends StatelessWidget {
   final passwordController = TextEditingController();
 
   void signUp() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailController.text.trim(),
-        password: passwordController.text.trim());
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text.trim(),
+          password: passwordController.text.trim());
+    } catch (e) {
+      print("the error is $e");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: Column(
